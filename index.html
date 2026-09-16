@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>動画</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 全画面セキュリティ警告テイクオーバー(1回目・読み込み直後) -->
+<div class="alert-overlay" id="alertOverlay">
+  <div class="alert-box">
+    <div class="alert-icon">⚠</div>
+    <p class="alert-kicker">セキュリティ警告</p>
+    <h2 id="alertTitle">不審な動作を検出しました</h2>
+    <p id="alertBody">このページで異常なスクリプトの実行が検出されました。安全のため接続を確認しています…</p>
+    <div class="alert-progress"><div class="alert-progress-bar" id="alertBar"></div></div>
+    <p class="alert-sub" id="alertSub">スキャン中: 0%</p>
+  </div>
+</div>
+
+<!-- スケアウェア風ポップアップ(2回目・一定時間経過後に突然出現) -->
+<div class="scare-overlay" id="scareOverlay">
+  <div class="scare-box">
+    <div class="scare-icon">☣</div>
+    <h2>ウイルスに感染しました</h2>
+    <p class="scare-body">お使いのデバイスで<strong>3件の脅威</strong>が検出されました。このまま放置すると、保存されているデータや個人情報が失われる可能性があります。</p>
+    <div class="scare-fake-scan">
+      <div class="scare-fake-row"><span>Trojan.GenericKD</span><span class="scare-tag">検出</span></div>
+      <div class="scare-fake-row"><span>Spyware.Tracker</span><span class="scare-tag">検出</span></div>
+      <div class="scare-fake-row"><span>Adware.PopUnder</span><span class="scare-tag">検出</span></div>
+    </div>
+    <button class="scare-cta" id="scareInstallBtn">今すぐ駆除する</button>
+    <button class="scare-dismiss" id="scareDismissBtn">閉じる</button>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="card" id="mainCard">
+    <div class="player" id="player">
+      <div class="glitch-layer"></div>
+      <div class="player-badge" id="playerBadge">読み込み中…</div>
+    </div>
+    <h1 id="mainTitle">動画を読み込んでいます…</h1>
+    <p class="warn-text" id="mainText">しばらくお待ちください。</p>
+    <a class="download" id="dlBtn" href="assets/test-file.txt" download data-action="file_download" style="display:none">⬇ 高画質版をダウンロード（推奨）</a>
+    <p class="countdown" id="countdownText" style="display:none">このリンクは<span id="timer">04:59</span>後に無効になります</p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
